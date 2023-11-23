@@ -1,11 +1,11 @@
 // TODO
-const firstName = document.getElementById("first-name")
-const lastName = document.getElementById("last-name")
-const form = document.getElementById("connect-form")
-const email = document.getElementById("email")
-const select = document.getElementById("contact-kind")
-const os = document.getElementById("operating-system")
-const employees = document.getElementById("num-of-employees")
+const firstName = document.getElementById("first-name");
+const lastName = document.getElementById("last-name");
+const form = document.getElementById("connect-form");
+const email = document.getElementById("email");
+const select = document.getElementById("contact-kind");
+const os = document.getElementById("operating-system");
+const employees = document.getElementById("num-of-employees");
 
 let valid = false;
 
@@ -16,6 +16,7 @@ const validLength = (input, min) => {
 		return true;
 	} else {
 		input.parentElement.classList.add("invalid");
+		// To fix: Add error message
 		return false;
 	}
 }
@@ -42,16 +43,16 @@ const handleSelect = (selectElement) => {
 	}
 }
 
-select.addEventListener("change", () => handleSelect(select))
+select.addEventListener("change", () => handleSelect(select));
 
 form.addEventListener("submit", (e) => {
-	handleSelect(select)
-	if (validLength(firstName, 3) && validLength(lastName, 3) && validateEmail(email)
-	) {
+	handleSelect(select);
+	if (validLength(firstName, 3) && validLength(lastName, 3) && validateEmail(email)) {
+		//To fix: Specific colors
 		valid = true;
 	} else {
 		valid = false;
-		console.log("Bad Input")
+		console.log("Bad Input");
 	}
-	e.preventDefault()
+	e.preventDefault();
 }) 
