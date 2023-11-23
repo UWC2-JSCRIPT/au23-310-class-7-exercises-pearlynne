@@ -1,0 +1,16 @@
+.invalid {
+	border: 1 px solid orangered;
+	background-color: #ffdddd;
+}
+
+.hidden {
+	display: none;
+}
+
+input:invalid {
+	box-shadow: 2px 2px 5px orangered;
+}
+
+input:valid {
+	border: 1px solid forestgreen;
+}
