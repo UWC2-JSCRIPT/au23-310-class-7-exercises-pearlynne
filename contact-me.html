@@ -12,19 +12,20 @@
 		<form id="contact-us">
 			<div class="contact-form">
 				<label for="name">Name:</label><br>
-				<input type="text" id="name" name="name" placeholder="Your name..." >
+				<input id="name" type="text" name="name" placeholder="Your name..." 
+				data-invalid-message="Please include a name with at least 3 characters."/>
 			</div>
 
 			<div class="contact-form">
 				<label for="email">Contact details:</label><br>
-				<input type="email" id="email" name="email" placeholder="Your email address..." 
+				<input id="email"  type="email" name="email" placeholder="Your email address..." 
 				data-invalid-message="Please provide an email address in the right format.">
 			</div>
 
 			<div class="contact-form">
 				<label for="reason">Reason for contacting us</label><br>
 				<select id="reason" data-invalid-message="Pick a reason.">
-					<option value="">--Please choose an option--</option>
+					<option value="">Please choose an option</option>
 					<option value="job-opportunity">Job opportunity</option>
 					<option value="talk-code">Talk code</option>
 				</select>
@@ -32,7 +33,8 @@
 			
 			<div class="contact-form hidden">
 				<label for="job-title">Job title</label><br>
-				<input  id="job-title" type="text" name="job-title"/>
+				<input id="job-title" type="text" name="job-title"
+				data-invalid-message="Please include a job title."/>
 			</div>
 
 			<div class="contact-form hidden">
@@ -53,7 +55,8 @@
 
 			<div class="contact-form">
 				<label for="message">Message</label><br>
-				<input id="message" type="text" name="message" placeholder="Your message here..." />
+				<textarea id="message" name="message" placeholder= "Your message here..." 
+				data-invalid-message="Please include a message with at least 10 characters"></textarea>
 			</div> 
 
 			<div class="contact-form">
