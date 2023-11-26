@@ -19,7 +19,7 @@ const validLength = (input, min) => {
 		return true;
 	} else {
 		input.parentElement.classList.add("invalid");
-		input.nextElementSibling.innerText = "Your name should have at least 3 characters."
+		input.nextElementSibling.innerText = "Your name should have at least 3 characters.";
 		return false;
 	}
 }
@@ -33,7 +33,7 @@ const validateEmail = (emailField) => {
 		return true;
 	} else {
 		emailField.parentElement.classList.add("invalid");
-		emailField.nextElementSibling.innerText = "The format of your email address is invalid."
+		emailField.nextElementSibling.innerText = "The format of your email address is invalid.";
 		return false;
 	}
 }
@@ -57,8 +57,9 @@ select.addEventListener("change", () => handleSelect(select));
 // Validate form
 form.addEventListener("submit", (e) => {
 	handleSelect(select);
+	
+	// If fields are invalid prevent default and log message to console
 	if (!validLength(firstName, 3) || !validLength(lastName, 3) || !validateEmail(email)) {
-
 		e.preventDefault();
 		console.log("Bad Input");
 	}
