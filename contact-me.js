@@ -22,7 +22,7 @@ const validLength = (input, min) => {
 	} else {
 		input.parentElement.classList.add("invalid");
 		input.validity.valid = false;
-		input.setCustomValidity(`Please enter at least ${min} characters`);
+		input.setCustomValidity(input.dataset.invalidMessage);
 		input.reportValidity();
 	}
 	return input.validity.valid;
@@ -89,7 +89,7 @@ email.addEventListener("change", () => validateRegex(email, /\w+@\w+\.\w+/));
 select.addEventListener("change", () => handleSelect(select));
 select.addEventListener("change", () => validateSelect(select));
 
-jobTitle.addEventListener("change", () => validLength(jobTitle, 0));
+jobTitle.addEventListener("change", () => validLength(jobTitle, 1));
 compWeb.addEventListener("change", () => validateRegex(compWeb, /https?\:\/\/.+\..+/));
 
 codingLang.addEventListener("change", () => handleSelect(codingLang));
@@ -119,7 +119,7 @@ function formValidation(e) {
 
 	// Validate hidden elements
 	if (!jobTitle.parentElement.classList.contains('hidden')) {
-		if (!validLength(jobTitle, 0)) {
+		if (!validLength(jobTitle, 1)) {
 			valid = false;
 		}
 		if (!validateRegex(compWeb, /https?\:\/\/.+\..+/)) {
