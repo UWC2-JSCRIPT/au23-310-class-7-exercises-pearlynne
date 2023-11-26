@@ -63,4 +63,5 @@ form.addEventListener("submit", (e) => {
 		e.preventDefault();
 		console.log("Bad Input");
 	}
+	console.log("Form submitted")
 }) 
