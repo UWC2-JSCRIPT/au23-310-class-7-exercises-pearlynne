@@ -1,26 +1,31 @@
 // TODO
+// Get elements of form
+const form = document.getElementById("connect-form");
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
-const form = document.getElementById("connect-form");
 const email = document.getElementById("email");
+
+
+// Get hidden elements
 const select = document.getElementById("contact-kind");
 const os = document.getElementById("operating-system");
 const employees = document.getElementById("num-of-employees");
 
-let valid = false;
 
-// Last and First name length requirement
+// Validation for length of first and last names
 const validLength = (input, min) => {
-	if (input.value.trim().length > min) {
+	if (input.value.trim().length >= min) {
 		input.parentElement.classList.remove("invalid");
 		return true;
 	} else {
 		input.parentElement.classList.add("invalid");
-		// To fix: Add error message
+		input.nextElementSibling.innerText = "Your name should have at least 3 characters."
 		return false;
 	}
 }
 
+
+// Validation for email regex
 const validateEmail = (emailField) => {
 	const re = /\w+@\w+\.\w+/;
 	if (re.test(emailField.value.trim())) {
@@ -28,10 +33,12 @@ const validateEmail = (emailField) => {
 		return true;
 	} else {
 		emailField.parentElement.classList.add("invalid");
+		emailField.nextElementSibling.innerText = "The format of your email address is invalid."
 		return false;
 	}
 }
 
+// Toggle hidden select fields
 const handleSelect = (selectElement) => {
 	const selectedValue = selectElement.value;
 	if (selectedValue == "business") {
@@ -43,16 +50,16 @@ const handleSelect = (selectElement) => {
 	}
 }
 
+
 select.addEventListener("change", () => handleSelect(select));
 
+
+// Validate form
 form.addEventListener("submit", (e) => {
 	handleSelect(select);
-	if (validLength(firstName, 3) && validLength(lastName, 3) && validateEmail(email)) {
-		//To fix: Specific colors
-		valid = true;
-	} else {
-		valid = false;
+	if (!validLength(firstName, 3) || !validLength(lastName, 3) || !validateEmail(email)) {
+
+		e.preventDefault();
 		console.log("Bad Input");
 	}
-	e.preventDefault();
 }) 
