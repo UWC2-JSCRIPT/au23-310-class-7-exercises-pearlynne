@@ -1,16 +1,45 @@
+body {
+	margin: 0;
+	font-family: "Trebuchet MS", serif;
+	height: 100vh;
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+}
+
+.container {
+	display: flex;
+	overflow-x: auto;
+	margin: 20px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .hidden {
 	display: none;
 }
 
 .invalid {
-	border: 1 px solid orangered;
-	background-color: #ffdddd;
+	color: #FF5733;
+}
+
+input, select, textarea {
+	font-family: inherit;
+	font-size: 16px;
+	width: 500px;
+	padding: 5px;
+	border-radius: 4px;
+	margin: 5px 0px;
 }
 
 input:invalid {
-	box-shadow: 2px 2px 5px orangered;
+	box-shadow: 2px 2px 5px #FF5733;
 }
 
 input:valid {
-	border: 1px solid forestgreen;
+	border: 1px solid #379258;
 }
+
