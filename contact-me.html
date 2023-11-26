@@ -4,57 +4,60 @@
 <head>
 	<title>Contact Me</title>
 	<title>Form Validation</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 	<link rel="stylesheet" href="contact-me.css" />
 </head>
 
 <body>
 	<div class="container">
 		<form id="contact-us">
-			<div id="form-group">
+			<div class="contact-form">
 				<label for="name">Name:</label><br>
-				<input class="form-control validate-input" type="text" id="name" name="name" placeholder="Your name.."
-					required="">
+				<input type="text" id="name" name="name" placeholder="Your name..." >
 			</div>
 
-			<div id="form-group">
+			<div class="contact-form">
 				<label for="email">Contact details:</label><br>
-				<input class="form-control validate-input" type="email" id="email" name="email" placeholder="Your email address"
-					required="">
+				<input type="email" id="email" name="email" placeholder="Your email address..." 
+				data-invalid-message="Please provide an email address in the right format.">
 			</div>
 
-			<div id="form-group">
+			<div class="contact-form">
 				<label for="reason">Reason for contacting us</label><br>
-				<select class="form-control" id="reason">
+				<select id="reason" data-invalid-message="Pick a reason.">
 					<option value="">--Please choose an option--</option>
 					<option value="job-opportunity">Job opportunity</option>
 					<option value="talk-code">Talk code</option>
 				</select>
-			</div><br>
-
-			<div class="form-group hidden">
-				<label for="job-title">Job title</label>
-				<input class="form-control validate-input" id="job-title" type="text" name="job-title" />
+			</div>
+			
+			<div class="contact-form hidden">
+				<label for="job-title">Job title</label><br>
+				<input  id="job-title" type="text" name="job-title"/>
 			</div>
 
-			<div class="form-group hidden">
-				<label for="company-website">Company website</label>
-				<input class="form-control validate-input" id="company-website" type="url" name="company-website" />
+			<div class="contact-form hidden">
+				<label for="company-website">Company website</label><br>
+				<input id="company-website" type="url" name="company-website"
+				data-invalid-message="Please provide your company's website in the right format."/>
 			</div>
 
-			<div class="form-group hidden">
-				<label for="coding-lang">Coding Language</label>
-				<input id="coding-lang" class="form-control validate-input" type="text" name="coding-lang" />
+				<div class="contact-form hidden">
+				<label for="coding-lang">Coding Language</label><br>
+				<select id="coding-lang" data-invalid-message="Pick a coding language.">
+					<option value="">Choose an option</option>
+					<option value="langHTML">HTML</option>
+					<option value="langCSS">CSS</option>
+					<option value="langJS">JavaScript</option>
+				</select>
 			</div>
 
-			<div class="form-group hidden">
-				<label for="message">Message</label>
-				<input id="message" class="form-control validate-input" type="text" name="message" required />
-			</div>
+			<div class="contact-form">
+				<label for="message">Message</label><br>
+				<input id="message" type="text" name="message" placeholder="Your message here..." />
+			</div> 
 
-			<div class="form-group">
-				<button class="button" type="submit">Submit</button>
+			<div class="contact-form">
+				<input class="button" type="submit">
 			</div>
 		</form>
 	</div>
@@ -63,11 +66,3 @@
 </body>
 
 </html>
-
-
-<!-- 1. If "Job opportunity" is selected, validate the following and show messages if invalid (1 point):
-Job Title is present
-Company website is present and url is valid (regex) /https?\:\/\/.+\..+/ (or use constraint validation api)
-2. If "Talk code" is selected (1 point):
-Coding language should be a <select> (dropdown) containing 3 or more coding languages as options (i.e. HTML, CSS, JavaScript).  The initially selected option should be "Choose One"
-Validate that this field (coding language) is changed to one of the coding languages, and show a message if invalid -->
