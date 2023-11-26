@@ -59,9 +59,9 @@ form.addEventListener("submit", (e) => {
 	handleSelect(select);
 	
 	// If fields are invalid prevent default and log message to console
+	// Note: Messages will not show all at the same time due to condition short circuiting
 	if (!validLength(firstName, 3) || !validLength(lastName, 3) || !validateEmail(email)) {
 		e.preventDefault();
 		console.log("Bad Input");
 	}
-	console.log("Form submitted")
 }) 
