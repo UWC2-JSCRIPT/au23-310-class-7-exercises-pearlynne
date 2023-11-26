@@ -1,3 +1,4 @@
+
 .invalid {
 	border: 1 px solid orangered;
 	background-color: #ffdddd;
@@ -7,10 +8,12 @@
 	display: none;
 }
 
-input:invalid {
+
+/* This only works if you add required to the inputs */
+/* input:invalid {
 	box-shadow: 2px 2px 5px orangered;
 }
 
 input:valid {
 	border: 1px solid forestgreen;
-}
+} */
