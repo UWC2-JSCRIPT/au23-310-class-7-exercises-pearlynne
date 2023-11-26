@@ -92,7 +92,6 @@ select.addEventListener("change", () => validateSelect(select));
 jobTitle.addEventListener("change", () => validLength(jobTitle, 1));
 compWeb.addEventListener("change", () => validateRegex(compWeb, /https?\:\/\/.+\..+/));
 
-codingLang.addEventListener("change", () => handleSelect(codingLang));
 codingLang.addEventListener("change", () => validateSelect(codingLang));
 
 message.addEventListener("change", () => validLength(message, 10));
