@@ -6,8 +6,9 @@ describe('Tests for the Soccer Game', () => {
 		})
 	})
 	describe('Tests for orderTeams function', () => {
-		it('should return a descending order of teams based on scores', () => {
-			const result = orderTeams({name: 'Sounders', results: 'wwlwdd'},{ name: 'Galaxy', results: 'wlldld' } )
+		it('should accept a string of results and return total score of teams', () => {
+			const result = orderTeams({name: 'Sounders', results: 'wwlwdd'}, 
+			{name: 'Galaxy', results: 'wlldld'})
 			expect(result).toEqual(`Sounders: 11\nGalaxy: 5`);
 		})
 	})
