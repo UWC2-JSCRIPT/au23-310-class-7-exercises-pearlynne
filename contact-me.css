@@ -1,0 +1,45 @@
+body {
+	font-family: "Trebuchet MS", serif;
+	font-size: 16px;
+}
+
+.container {
+	overflow-x: auto;
+	margin: 20px;
+}
+
+.hidden {
+	display: none;
+}
+
+.invalid {
+	color: #FF5733;
+}
+
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	width: 500px;
+	padding: 5px;
+	border-radius: 4px;
+	margin: 5px 0px;
+}
+
+
+button {
+	font-family: inherit;
+	font-size: inherit;
+	padding: 5px;
+	border-radius: 4px;
+	margin: 5px 0px;
+}
+
+input:invalid {
+	box-shadow: 2px 2px 5px #FF5733;
+}
+
+input:valid {
+	border: 1px solid #379258;
+}

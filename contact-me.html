@@ -1,10 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Contact Me</title>
-  </head>
 
-  <body>
-    <!-- TODO -->
-  </body>
+<head>
+	<title>Contact Me</title>
+	<title>Form Validation</title>
+	<link rel="stylesheet" href="contact-me.css" />
+</head>
+
+<body>
+	<div class="container">
+		<form id="contact-us">
+			<div class="contact-form">
+				<label for="name">Name:</label><br>
+				<input id="name" type="text" name="name" placeholder="Your name..." 
+				data-invalid-message="Please include a name with at least 3 characters."/>
+			</div>
+
+			<div class="contact-form">
+				<label for="email">Contact details:</label><br>
+				<input id="email"  type="email" name="email" placeholder="Your email address..." 
+				data-invalid-message="Please provide an email address in the right format.">
+			</div>
+
+			<div class="contact-form">
+				<label for="reason">Reason for contacting us</label><br>
+				<select id="reason" data-invalid-message="Pick a reason.">
+					<option value="">Please choose an option</option>
+					<option value="job-opportunity">Job opportunity</option>
+					<option value="talk-code">Talk code</option>
+				</select>
+			</div>
+			
+			<div class="contact-form hidden">
+				<label for="job-title">Job title</label><br>
+				<input id="job-title" type="text" name="job-title"
+				data-invalid-message="Please include a job title."/>
+			</div>
+
+			<div class="contact-form hidden">
+				<label for="company-website">Company website</label><br>
+				<input id="company-website" type="url" name="company-website"
+				data-invalid-message="Please provide your company's website in the right format."/>
+			</div>
+
+				<div class="contact-form hidden">
+				<label for="coding-lang">Coding Language</label><br>
+				<select id="coding-lang" data-invalid-message="Pick a coding language.">
+					<option value="">Choose an option</option>
+					<option value="langC">C or C++</option>
+					<option value="langJava">Java</option>
+					<option value="langJS">JavaScript</option>
+					<option value="langPython">Python</option>
+					<option value="langR">R</option>					
+					<option value="langRuby">Ruby</option>
+				</select>
+			</div>
+
+			<div class="contact-form">
+				<label for="message">Message</label><br>
+				<textarea id="message" name="message" placeholder= "Your message here..." 
+				data-invalid-message="Please include a message with at least 10 characters"></textarea>
+			</div> 
+
+			<div class="contact-form">
+				<button class="button">Submit form</button>
+			</div>
+		</form>
+	</div>
+
+	<script src="contact-me.js"></script>
+</body>
+
 </html>
